@@ -7,8 +7,10 @@ n <- names(d)
 address_id <- grep("Entrez_ID", n)
 address_fc <- grep("fc", n)
 
-# Make the geneList, a numeric vector contains the fold change values of whole transcripts on chip with named by 'Entrez gene ID' to analyse.
+
+# Make the geneList for Gene Set Enrichment Analysis, which is a numeric vector consisted of the fold change values of whole probes on a chip and named with Entrez gene ID.
 geneList = d[,'address_fc']
 names(geneList) = as.character(d[, 'address_id'])
 geneList = sort(geneList, decreasing = TRUE)
+
 
